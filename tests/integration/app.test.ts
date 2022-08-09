@@ -13,7 +13,7 @@ describe("integration test", () => {
   it("should save a student", async () => {
     const students = { students: [{ name: "didi" }] };
     const { status } = await agent.post("/students").send(students);
-    expect(status).toBe(201);
+    expect(status).toBe(200);
 
     // side effect
     const savedStudent = await prisma.student.findFirst({
